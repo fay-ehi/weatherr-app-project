@@ -16,3 +16,22 @@ form {
   padding: 70px;
   max-width: 600px;
 }
+
+#input-form {
+  padding: 10px;
+  width: 65%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid black;
+  position: relative;
+  right: 65px;
+}
+
+#search-button {
+  padding: 6px 13px;
+  background-color: black;
+  color: white;
+  border-radius: 25px;
+  position: relative;
+  top: 3px;
+}
