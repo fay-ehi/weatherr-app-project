@@ -1,0 +1,18 @@
+body {
+  background: linear-gradient(
+    109.6deg,
+    rgb(255, 221, 225) -10%,
+    rgb(255, 255, 255) 92.2%
+  );
+}
+
+form {
+  text-align: center;
+}
+.container {
+  text-align: center;
+  margin: 97px auto;
+  border: black solid;
+  padding: 70px;
+  max-width: 600px;
+}
