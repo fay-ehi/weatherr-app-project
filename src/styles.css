@@ -16,15 +16,21 @@ form {
 
 .container {
   margin: 97px auto;
-  border: black solid;
-  padding: 50px;
+  padding: 45px;
   max-width: 600px;
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/132/607/original/sky-with-clouds-soft-cloudy-gradient-pastel-background-v_1499896jpg!sw800.jpg?1720648783");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 25px;
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.8);
 }
 footer {
   text-align: center;
 }
 .temperature-icon {
   font-size: 50px;
+  position: relative;
+  left: 20px;
 }
 .weather-description {
   font-size: 20px;
