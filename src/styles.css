@@ -4,6 +4,7 @@ body {
     rgb(255, 221, 225) -10%,
     rgb(255, 255, 255) 92.2%
   );
+  font-family: Arial, Helvetica, sans-serif;
 }
 h1 {
   position: relative;
@@ -42,15 +43,16 @@ footer {
   top: -120px;
   right: 10px;
 }
-.temperature-number {
+#temperature-number {
   font-size: 80px;
   font-weight: bold;
+  position: relative;
 }
 .temperature-unit {
   font-size: 30px;
   position: relative;
   top: -35px;
-  right: 20px;
+  right: 8px;
 }
 
 .wind-humidity {
