@@ -27,6 +27,8 @@ form {
 }
 footer {
   text-align: center;
+  position: relative;
+  top: 25px;
 }
 .temperature-icon {
   font-size: 50px;
@@ -38,26 +40,29 @@ footer {
   font-weight: 510;
 }
 .weather-condition {
-  text-align: end;
+  display: flex;
   position: relative;
   top: -120px;
   right: 10px;
+  justify-content: end;
 }
 #temperature-number {
   font-size: 80px;
   font-weight: bold;
   position: relative;
+  top: -35px;
+  right: -85px;
 }
 .temperature-unit {
   font-size: 30px;
   position: relative;
-  top: -35px;
-  right: 8px;
+  top: -23px;
+  right: -90px;
 }
 
 .wind-humidity {
   position: relative;
-  top: 25px;
+  top: 60px;
   line-height: 25px;
   right: 30px;
 }
