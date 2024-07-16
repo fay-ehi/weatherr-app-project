@@ -18,6 +18,13 @@ function getWeather(response) {
   let date = new Date(response.data.time * 1000);
   let dateElement = document.querySelector(".date-time");
   dateElement.innerHTML = formatDate(date);
+
+  let iconElement = document.querySelector("#icon");
+  iconElement.innerHTML = ` <img
+          src=${response.data.condition.icon_url}
+          alt="temperature-icon"
+          class="temperature-icon"
+        />`;
 }
 
 function searchCity(city) {

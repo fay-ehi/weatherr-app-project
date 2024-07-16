@@ -23,7 +23,7 @@ form {
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 25px;
-  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 footer {
@@ -32,11 +32,15 @@ footer {
   top: 25px;
 }
 .temperature-icon {
-  font-size: 50px;
+  width: 130px;
+  height: 130px;
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(5px 5px 5px #222);
 }
 #weather-description {
-  font-size: 19px;
-  font-weight: 510;
+  font-size: 17px;
+  position: relative;
+  top: 10px;
 }
 .weather-condition {
   display: flex;
