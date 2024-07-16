@@ -25,6 +25,7 @@ form {
   border-radius: 25px;
   box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.8);
 }
+
 footer {
   text-align: center;
   position: relative;
@@ -32,11 +33,9 @@ footer {
 }
 .temperature-icon {
   font-size: 50px;
-  position: relative;
-  left: 20px;
 }
-.weather-description {
-  font-size: 20px;
+#weather-description {
+  font-size: 19px;
   font-weight: 510;
 }
 .weather-condition {
