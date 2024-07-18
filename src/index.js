@@ -60,5 +60,8 @@ function formatDate(date) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
+  if (hour < 1) {
+    hour = `0${hour}`;
+  }
   return `${day} ${hour}:${minutes}`;
 }
