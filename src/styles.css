@@ -16,8 +16,8 @@ form {
 }
 
 .container {
-  margin: 97px auto;
-  padding: 45px;
+  margin: 40px auto;
+  padding: 25px 45px;
   max-width: 600px;
   background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/132/607/original/sky-with-clouds-soft-cloudy-gradient-pastel-background-v_1499896jpg!sw800.jpg?1720648783");
   background-repeat: no-repeat;
@@ -87,4 +87,34 @@ footer {
   border-radius: 25px;
   position: relative;
   top: 3px;
+}
+.weather-forecast {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  top: -65px;
+  left: 40px;
+}
+.weather-forecast-day {
+  text-align: center;
+  font-size: 20px;
+}
+.weather-forecast-icon {
+  text-align: center;
+  font-size: 25px;
+  position: relative;
+  top: 20px;
+  left: -30px;
+}
+
+.weather-forecast-temperature {
+  padding: 5px;
+  position: relative;
+  top: 60px;
+  left: -80px;
+}
+.weather-forecast-temperatures {
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
