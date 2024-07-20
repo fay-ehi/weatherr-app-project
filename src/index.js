@@ -42,7 +42,7 @@ function handleSearch(event) {
 let searchElement = document.querySelector(".searchForm");
 searchElement.addEventListener("submit", handleSearch);
 
-searchCity("australia");
+searchCity("new york");
 
 function formatDate(date) {
   let hour = date.getHours();
@@ -64,4 +64,27 @@ function formatDate(date) {
     hour = `0${hour}`;
   }
   return `${day} ${hour}:${minutes}`;
+}
+
+function displayForecast() {
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  let forecastHtml = "";
+
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `
+     <div class="blur">
+          <div class="weather-forecast-day">${day}</div>
+          <div class="weather-forecast-icon">🌤️</div>
+          <div class="weather-forecast-temperatures">
+            <div class="weather-forecast-temperature">
+              <strong> <strong>18°</strong>
+            </div>
+            <div class="weather-forecast-temperature">22°</div>
+          </div>`;
+  });
+
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = forecastHtml;
 }
