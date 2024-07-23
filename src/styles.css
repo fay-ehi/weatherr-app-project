@@ -124,15 +124,15 @@ footer {
   transition: all ease-in-out 300ms;
 }
 .blur-wrap:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 .weather-forecast-temperatures {
   display: flex;
   justify-content: center;
   text-align: center;
   position: relative;
-  top: 45px;
-  left: -73px;
+  top: 58px;
+  left: -90px;
 }
 
 .weather-forecast-temperature {
@@ -141,11 +141,11 @@ footer {
 }
 
 .weather-forecast-icon {
-  text-align: center;
+  width: 55px;
+  height: 50px;
   position: relative;
-  top: 20px;
-  left: -25px;
-  font-size: 20px;
+  left: -35px;
+  top: 15px;
 }
 
 .weather-forecast-day {
