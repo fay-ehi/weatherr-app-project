@@ -65,6 +65,26 @@ form {
   right: -90px;
 }
 
+.farenheit-button {
+  font-weight: 700;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  left: 90px;
+  top: -25px;
+  background-color: transparent;
+  font-size: 30px;
+  border: none;
+  transition: all 300ms ease-in-out;
+}
+.farenheit-button:hover {
+  background-color: transparent;
+  border-radius: 5px;
+  box-shadow: inset 0 0 2000px rgba(248, 255, 228, 0.5);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  backdrop-filter: 10px;
+  cursor: pointer;
+}
 .wind-humidity {
   position: relative;
   top: 60px;

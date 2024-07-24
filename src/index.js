@@ -1,16 +1,24 @@
+function celsiusToFahrenheit(celsius) {
+  return Math.round((celsius * 9) / 5 + 32);
+}
+
+function fahrenheitToCelsius(fahrenheit) {
+  return Math.round(((fahrenheit - 32) * 5) / 9);
+}
+
 function getWeather(response) {
   let cityElement = document.querySelector("h1");
   cityElement.innerHTML = response.data.city;
 
   let temperatureElement = document.querySelector("#temperature-number");
-  let temperature = Math.round(response.data.temperature.current);
-  temperatureElement.innerHTML = temperature;
+  let temperatureCelsius = Math.round(response.data.temperature.current);
+  temperatureElement.innerHTML = temperatureCelsius;
 
   let weatherDescription = document.querySelector("#weather-description");
   weatherDescription.innerHTML = response.data.condition.description;
 
   let windElement = document.querySelector("#wind");
-  windElement.innerHTML = `Wind: ${response.data.wind.speed}km/h`;
+  windElement.innerHTML = `Wind: ${response.data.wind.speed} km/h`;
 
   let humidityElement = document.querySelector("#humidity");
   humidityElement.innerHTML = `Humidity: ${response.data.temperature.humidity}%`;
@@ -20,11 +28,17 @@ function getWeather(response) {
   dateElement.innerHTML = formatDate(date);
 
   let iconElement = document.querySelector("#icon");
-  iconElement.innerHTML = ` <img
-          src=${response.data.condition.icon_url}
-          alt="temperature-icon"
-          class="temperature-icon"
-        />`;
+  iconElement.innerHTML = `
+    <img
+      src=${response.data.condition.icon_url}
+      alt="temperature-icon"
+      class="temperature-icon"
+    />
+  `;
+
+  let unit = document.querySelector(".temperature-unit");
+  unit.innerHTML = "°C |";
+  farenheitButton.innerHTML = "°F";
   getForecast(response.data.city);
 }
 
@@ -43,8 +57,6 @@ function handleSearch(event) {
 let searchElement = document.querySelector(".searchForm");
 searchElement.addEventListener("submit", handleSearch);
 
-searchCity("new york");
-
 function formatDate(date) {
   let hour = date.getHours();
   let minutes = date.getMinutes();
@@ -61,7 +73,7 @@ function formatDate(date) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  if (hour < 1) {
+  if (hour < 10) {
     hour = `0${hour}`;
   }
   return `${day} ${hour}:${minutes}`;
@@ -70,14 +82,13 @@ function formatDate(date) {
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-
   return days[date.getDay()];
 }
 
 function getForecast(city) {
-  let apiKey = "b2a5adcct04b33178913oc335f405433";
+  let apiKey = "8d8ob1t4a343b0f13b62705ad423c092";
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
-  axios(apiUrl).then(displayForecast);
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function displayForecast(response) {
@@ -90,7 +101,6 @@ function displayForecast(response) {
         `
       <div class="weather-forecast-day">
         <div class="weather-forecast-date">${formatDay(day.time)}</div>
-
         <img src="${day.condition.icon_url}" class="weather-forecast-icon" />
         <div class="weather-forecast-temperatures">
           <div class="weather-forecast-temperature">
@@ -108,3 +118,29 @@ function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = forecastHtml;
 }
+
+function changeUnit() {
+  let temperatureElement = document.querySelector("#temperature-number");
+  let unit = document.querySelector(".temperature-unit");
+
+  if (unit.innerHTML === "°C |") {
+    let currentCelsius = parseInt(temperatureElement.innerHTML, 10);
+    let fahrenheitTemp = celsiusToFahrenheit(currentCelsius);
+
+    temperatureElement.innerHTML = fahrenheitTemp;
+    unit.innerHTML = "°F |";
+    farenheitButton.innerHTML = "°C";
+  } else {
+    let currentFahrenheit = parseInt(temperatureElement.innerHTML, 10);
+    let celsiusTemp = fahrenheitToCelsius(currentFahrenheit);
+
+    temperatureElement.innerHTML = celsiusTemp;
+    unit.innerHTML = "°C |";
+    farenheitButton.innerHTML = "°F";
+  }
+}
+
+let farenheitButton = document.querySelector(".farenheit-button");
+farenheitButton.addEventListener("click", changeUnit);
+
+searchCity("new york");
